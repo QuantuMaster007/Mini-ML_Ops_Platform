@@ -1,0 +1,33 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow-server
+    ports:
+      - "5050:5000"
+    command: >
+      sh -c "mkdir -p /mlflow_artifacts && mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:////mlflow/mlflow.db
+      --default-artifact-root file:/mlflow_artifacts"
+    volumes:
+      - mlflow_db:/mlflow
+      - mlflow_artifacts:/mlflow_artifacts
+
+  inference:
+    build:
+      context: .
+      dockerfile: docker/inference.Dockerfile
+    container_name: inference-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MODEL_NAME=mini-mlops-platform-model
+      - MODEL_STAGE=production
+    depends_on:
+      - mlflow
+
+volumes:
+  mlflow_db:
+  mlflow_artifacts:

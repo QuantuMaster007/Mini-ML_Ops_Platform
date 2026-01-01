@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# MLflow local artifacts (generated)
+mlruns/
+mlflow.db
+*.db
+
+# runtime outputs
+artifacts/
+data/processed/
