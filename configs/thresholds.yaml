@@ -1,0 +1,4 @@
+retrain:
+  min_requests: 200
+  max_abs_feature_mean_shift: 0.25     # normalized shift threshold
+  max_abs_pred_mean_shift: 0.15
