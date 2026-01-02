@@ -26,6 +26,14 @@ make data
 make train
 make promote
 ```
+## Smoke test evidence (local)
+
+Outputs saved under `docs/smoke/`:
+
+- `health.txt`
+- `predict.txt`
+- `metrics.txt`
+- `docs.txt` (Swagger UI HTML response)
 
 ## Test inference
 ```bash
