@@ -55,7 +55,7 @@ python -m src.monitoring.retrain_decider
 cat artifacts/retrain_decision.json
 ```
 
-## Latency vs throughput tradeoff (what to say in interviews)
+## Latency vs throughput tradeoff
 - Latency: single request time (FastAPI path)
 - Throughput: requests/sec (batching, async, model loading strategy)
 - This demo uses simple synchronous inference for clarity.
