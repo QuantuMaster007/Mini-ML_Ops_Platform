@@ -1,4 +1,4 @@
-# mini-mlops-platform (End-to-End, No Hype)
+# mini-mlops-platform (End-to-End)
 
 This repo demonstrates an end-to-end ML lifecycle:
 **data versioning → training → model registry → containerized serving → monitoring → retraining triggers**
